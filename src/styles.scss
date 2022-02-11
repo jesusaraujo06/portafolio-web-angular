@@ -18,9 +18,19 @@ h1, h2{
     margin: 0; 
 }
 
+a, a:visited, a:hover, a:link{
+    color: white;
+    font-weight: 500;
+}
+
 @for $i from 1 through 100 {
 
     .animation-#{$i}{
         animation-delay: #{$i / 10}s;
     }
+}
+
+hr{
+    border-color: #ffffff17;
+    margin: 2rem 0;
 }

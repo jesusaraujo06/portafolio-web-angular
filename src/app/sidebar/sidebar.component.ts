@@ -8,10 +8,23 @@ import Typewriter from 't-writer.js';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
-
   
-
+  // Declaración de variables
   @ViewChild('asTitle') asTitle!: ElementRef;
+  links: Array<linkModel> = [
+    {
+      link: 'https://example.com',
+      icon: '<i class="uil uil-youtube"></i>'
+    },
+    {
+      link: 'https://example.com',
+      icon: '<i class="uil uil-envelope"></i>'
+    },
+    {
+      link: 'https://example.com',
+      icon: '<i class="uil uil-github-alt"></i>'
+    }
+  ];
 
   constructor() { 
     
@@ -35,10 +48,21 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     })
     
     writer
+      .changeCursorColor('white')
       .type('Jesus Araujo')
-      .rest(500)
+      .rest(50000)
       .start();
               
   }
 
+}
+
+class linkModel {
+  link: string = "";
+  icon: string = "";
+
+  constructor(){
+    // this.link = "";
+    // this.icon = "";
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from '../github.service';
 
 @Component({
   selector: 'app-works',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorksComponent implements OnInit {
 
-  constructor() { }
+  repos: any = "";
+
+  constructor(private gitHubService: GithubService) { }
 
   ngOnInit(): void {
+    this.gitHubService.loadRepos().subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
