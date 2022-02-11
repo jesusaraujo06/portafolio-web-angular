@@ -9,12 +9,13 @@ import { GithubService } from '../github.service';
 export class WorksComponent implements OnInit {
 
   repos: any = "";
+  config: any = "";
 
   constructor(private gitHubService: GithubService) { }
 
   ngOnInit(): void {
     this.gitHubService.loadRepos().subscribe(res => {
-      console.log(res);
+      this.repos = res;
     });
   }
 
