@@ -6,10 +6,15 @@
     --color-2: #ffd500;
 }
 
-html, body{
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html, body{
     color: white;
+    font-size: 16px;
     font-family: 'Cabin', sans-serif;
     background-color: var(--color-1);
 }
